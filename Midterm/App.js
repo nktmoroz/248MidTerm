@@ -6,12 +6,12 @@ import ItemDisplay from './components/ItemDisplay';
 
 export default function App() {
 
-  const [GeneratedItem, setGeneratedItem] = useState();
+  const [GeneratedItem, setGeneratedItem] = useState({Type: 'Sword', Rarity: 'Common', Stat: 'Attack', StatValue: 1});
 
   return (
     <View style={styles.container}>
-      <ItemGenerator setGeneratedItem={setGeneratedItem}/>
       <ItemDisplay item={GeneratedItem}/>
+      <ItemGenerator setGeneratedItem={setGeneratedItem}/>
     </View>
   );
 };
