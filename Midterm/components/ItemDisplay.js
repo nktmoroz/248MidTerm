@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
 
-const ItemDisplay = ({type, rarity, stat, statValue}) => {
+const ItemDisplay = ({item}) => {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.resultText}>blah blah</Text>
-            <Text style={styles.resultText}>Icon Goes Here????</Text>
-            <Text style={styles.resultText}>{stat}: {statValue}</Text>
+            <Text style={styles.resultText}>Rarity Item!</Text>
+            <Text style={styles.resultText}>*Icon goes here*</Text>
+            <Text style={styles.resultText}>Stat: StatValue</Text>
         </View>
     );
 
@@ -23,6 +23,8 @@ const styles= StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         justifyContent: 'center',
+        paddingTop: 10,
+        paddingBottom: 10
     },
 
 });

@@ -1,53 +1,57 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const ItemGenerator = () => {
+const ItemGenerator = ({setGeneratedItem}) => {
 
-    const [item, setItem] = useState();
+    const [item, setItem] = useState({Type: 'Sword', Rarity: 'Common', Stat: 'Attack', StatValue: 1});
 
     statValue = 0;
 
     const generateItem = () => {
 
         typeRoll = Math.floor((Math.random()) * 4);
-
+        type = '';
         switch(typeRoll){
             case 0:
-                console.log("Sword");
+                type = 'Sword'
                 break;
             case 1:
-                console.log("Helmet");
+                type = 'Helmet'
                 break;
             case 2:
-                console.log("Chestpiece");
+                type = 'Chestpiece'
                 break;
             case 3:
-                console.log("Boots");
+                type = 'Boots'
                 break;
         };
 
         rarityRoll = Math.floor((Math.random()) * 3);
+        rarity = '';
 
         switch(Math.floor(rarityRoll)){
             case 0:
-                console.log("Common");
+                rarity = 'Common'
                 break;
             case 1:
-                console.log("Rare");
+                rarity = 'Rare'
                 break;
             case 2:
-                console.log("Legendary");
+                rarity = 'Legendary'
                 break;
         };
+        stat = '';
         if(typeRoll == 0){
-            console.log("Attack:");
+            stat = 'Attack'
         }else {
-            console.log("Defense");
+            stat = 'Defense'
         }
-        console.log(Math.floor(Math.random() * (Math.pow(5,rarityRoll + 1) - Math.pow(5,rarityRoll)) + Math.pow(5,rarityRoll)));
-        
-        console.log('--------------------------');
 
+        statValue = Math.floor(Math.random() * (Math.pow(5,rarityRoll + 1) - Math.pow(5,rarityRoll)) + Math.pow(5,rarityRoll));
+        
+        setItem((prevItem) => ({...prevItem, Type: type, Rarity: rarity, Stat: stat, StatValue: statValue}));
+        console.log(item);
+        setGeneratedItem(item);
     };
 
     return(

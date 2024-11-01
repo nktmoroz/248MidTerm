@@ -5,10 +5,13 @@ import ItemGenerator from './components/ItemGenerator';
 import ItemDisplay from './components/ItemDisplay';
 
 export default function App() {
+
+  const [GeneratedItem, setGeneratedItem] = useState();
+
   return (
     <View style={styles.container}>
-      <ItemDisplay/>
-      <ItemGenerator/>
+      <ItemGenerator setGeneratedItem={setGeneratedItem}/>
+      <ItemDisplay item={GeneratedItem}/>
     </View>
   );
 };
