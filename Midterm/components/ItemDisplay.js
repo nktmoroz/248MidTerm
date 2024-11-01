@@ -2,26 +2,41 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
 const ItemDisplay = ({item}) => {
-    console.log(item.Rarity);
 
-    bgColor = '#FFFFFF';
+    let iconColor;
     switch(item.Rarity){
+        case 'Common':
+            iconColor ='#FFFFFF'
+            break;
         case 'Rare': 
-            bgColor = '#0000FF'
+            iconColor = '#4169E1'
             break;
         case 'Legendary':
-            bgColor = '#FFA500'
+            iconColor = '#FFA500'
             break;
     }
-
-    console.log(bgColor)
-    styles.iconBorder.backgroundColor = bgColor;
-    console.log(styles.iconBorder.backgroundColor)
+    let itemIcon;
+    switch(item.Type){
+        case 'Sword':
+            itemIcon = './icons/sword.png'
+            break;
+        case 'Helmet': 
+            itemIcon = './icons/helmet.png'
+            break;
+        case 'Chestpiece':
+            itemIcon = './icons/chest.png'
+            break;
+        case 'Gloves':
+            itemIcon = './icons/gloves.png'
+            break;
+    }
 
     return(
         <View style={styles.container}>
             <Text style={styles.itemText}>{item.Rarity} {item.Type}!</Text>
-            <View style={styles.iconBorder}> <img src='./icons/sword.png' style={styles.icon}/> </View>
+            <View style={styles.iconBorder(iconColor)}> 
+                <img src={itemIcon} style={styles.icon}/> 
+            </View>
             <Text style={styles.statText}>{item.Stat}: {item.StatValue}</Text>
         </View>
     );
@@ -46,8 +61,7 @@ const styles= StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         justifyContent: 'center',
-        paddingTop: 10,
-        paddingBottom: 10
+        paddingTop: 10
     },
 
     icon: {
@@ -59,13 +73,13 @@ const styles= StyleSheet.create({
         borderColor: 'black'
     },
 
-    iconBorder:{
+    iconBorder: (color) => ({
         borderWidth: 7,
         borderColor: 'black',
         borderRadius: 10,
         margin: 10,
-        backgroundColor: '#FFFFFF'
-    }
+        backgroundColor: color,
+    }),
 
 });
 

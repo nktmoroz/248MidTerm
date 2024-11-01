@@ -20,7 +20,7 @@ const ItemGenerator = ({setGeneratedItem}) => {
                 type = 'Chestpiece'
                 break;
             case 3:
-                type = 'Boots'
+                type = 'Gloves'
                 break;
         };
 
@@ -68,16 +68,18 @@ const styles= StyleSheet.create({
     },
 
     buttonText: {
-        fontSize: 25,
+        fontSize: 40,
         fontWeight: 'bold',
         justifyContent: 'center',
+        color: 'white'
     },
 
     button: {
         borderWidth: 5,
         borderColor: 'black',
         borderRadius: 10,
-        padding: 10
+        padding: 10,
+        backgroundColor: 'black',
     }
 });
 
