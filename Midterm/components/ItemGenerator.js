@@ -5,6 +5,8 @@ const ItemGenerator = () => {
 
     const [item, setItem] = useState();
 
+    statValue = 0;
+
     const generateItem = () => {
 
         typeRoll = Math.floor((Math.random()) * 4);
@@ -49,9 +51,9 @@ const ItemGenerator = () => {
     };
 
     return(
-        <View>
-            <TouchableOpacity onPress={generateItem}> 
-                <Text style= {styles.buttonText}> Generate </Text>
+        <View style={styles.container}>
+            <TouchableOpacity style={styles.button} onPress={generateItem}> 
+                <Text style= {styles.buttonText}> Open the Treasure Chest </Text>
             </TouchableOpacity>
         </View>
     );
@@ -59,12 +61,23 @@ const ItemGenerator = () => {
 };
 
 const styles= StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        padding: 20,
+    },
+
     buttonText: {
         fontSize: 25,
         fontWeight: 'bold',
         justifyContent: 'center',
-    }
+    },
 
+    button: {
+        borderWidth: 5,
+        borderColor: 'black',
+        borderRadius: 10,
+        padding: 10
+    }
 });
 
 export default ItemGenerator;
