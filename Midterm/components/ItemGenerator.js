@@ -48,7 +48,6 @@ const ItemGenerator = ({setGeneratedItem}) => {
         statValue = Math.floor(Math.random() * (Math.pow(5,rarityRoll + 1) - Math.pow(5,rarityRoll)) + Math.pow(5,rarityRoll));
         
         setItem((prevItem) => ({...prevItem, Type: type, Rarity: rarity, Stat: stat, StatValue: statValue}));
-        console.log(item.Rarity);
         setGeneratedItem(item);
     };
 
