@@ -5,7 +5,6 @@ import { View, Text, StyleSheet} from 'react-native';
 const equip = ({item, resetItem, setSword, setHelmet, setChestpiece, setGloves}) => {
 
     const equipItem = () => {
-        console.log(item.Type)
         switch(item.Type) {
             case 'Sword':
                 setSword(item)

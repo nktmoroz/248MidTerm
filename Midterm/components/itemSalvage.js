@@ -17,7 +17,7 @@ const salvageItem = () => {
             setTreasureParts(treasureParts+100)
             break;
     }
-    resetItem((prevItem) => ({...prevItem, Type: '?', Rarity: '?', Stat: "?", StatValue: '?'}));;
+    resetItem((prevItem) => ({...prevItem, Type: '?', Rarity: '?', Stat: "?", StatValue: '?'}));
 }
 
     return(

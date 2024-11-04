@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
-const Helmet = ({helm}) => {
+const Sword = ({sword}) => {
 
     let iconColor = '#FFFFFF'
-    switch (helm.Rarity){
+    switch (sword.Rarity){
         case 'Rare':
             iconColor = '#4169E1'
             break;
@@ -16,9 +16,9 @@ const Helmet = ({helm}) => {
     return(
         <View style={{alignItems: 'center'}}>
             <View style={styles.iconBorder(iconColor)}>
-                <img src='./icons/helmet.png' style={styles.equipmentIcon}/>
+                <img src='./icons/sword.png' style={styles.equipmentIcon}/>
             </View>
-            <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {helm.StatValue}</Text>
+            <Text style={{fontWeight:'bold', fontSize: 20}}>Attack: {sword.StatValue}</Text>
         </View>
         
     );
@@ -43,4 +43,4 @@ const styles=StyleSheet.create({
 
 });
 
-export default Helmet;
+export default Sword;

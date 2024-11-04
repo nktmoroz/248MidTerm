@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet} from 'react-native';
+import Sword from './equipment_slots/sword';
+import Helmet from './equipment_slots/helmet';
+import Chestpiece from './equipment_slots/chest';
+import Gloves from './equipment_slots/gloves';
 
 const EquipDisplay = ({sword, helmet, chestpiece, gloves}) => {
 
@@ -11,28 +15,16 @@ const EquipDisplay = ({sword, helmet, chestpiece, gloves}) => {
             <Text style={styles.equippedText}>Equipped</Text>
             <View style={styles.equipmentSlots}>
                 <View style={{alignItems: 'center'}}>
-                    <View style={styles.iconBorder('orange')}>
-                        <img src='./icons/sword.png' style={styles.equipmentIcon}/>
-                    </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20}}>Attack: {sword.StatValue}</Text>
+                    <Sword sword={sword}/>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <View style={styles.iconBorder('orange')}>
-                        <img src='./icons/helmet.png' style={styles.equipmentIcon}/>
-                    </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {helmet.StatValue}</Text>
+                    <Helmet helm={helmet}/>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <View style={styles.iconBorder('orange')}>
-                        <img src='./icons/chest.png' style={styles.equipmentIcon}/>
-                    </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {chestpiece.StatValue}</Text>
+                    <Chestpiece chest={chestpiece}/>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <View style={styles.iconBorder('orange')}>
-                        <img src='./icons/gloves.png' style={styles.equipmentIcon}/>
-                    </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {gloves.StatValue}</Text>
+                    <Gloves gloves={gloves}/>
                 </View>
             </View>
         </View>
