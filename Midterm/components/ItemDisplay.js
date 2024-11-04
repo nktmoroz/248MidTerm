@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
 const ItemDisplay = ({item}) => {
-
+    let isShown = 'false';
     let iconColor;
     switch(item.Rarity){
         case 'Common':
-            iconColor ='#FFFFFF'
+            iconColor = '#FFFFFF'
             break;
         case 'Rare': 
             iconColor = '#4169E1'
@@ -14,6 +14,8 @@ const ItemDisplay = ({item}) => {
         case 'Legendary':
             iconColor = '#FFA500'
             break;
+        case '?':
+            iconColor = '#FFFFFF'
     }
     let itemIcon;
     switch(item.Type){
@@ -29,15 +31,17 @@ const ItemDisplay = ({item}) => {
         case 'Gloves':
             itemIcon = './icons/gloves.png'
             break;
+        case '?':
+            itemIcon = './icons/treasure.png'
     }
 
     return(
         <View style={styles.container}>
-            <Text style={styles.itemText}>{item.Rarity} {item.Type}!</Text>
+            <Text style={styles.itemText}>{item.Rarity == '?' ? 'What could be inside?' : item.Rarity} {item.Type == '?' ? '': item.Type + "!"}</Text>
             <View style={styles.iconBorder(iconColor)}> 
                 <img src={itemIcon} style={styles.icon}/> 
             </View>
-            <Text style={styles.statText}>{item.Stat}: {item.StatValue}</Text>
+            <Text style={styles.statText}>{item.Stat == '?' ? 'Better check!':item.Stat + ': ' + item.StatValue}</Text>
         </View>
     );
 
@@ -46,7 +50,7 @@ const ItemDisplay = ({item}) => {
 const styles= StyleSheet.create({
     container: {
         alignItems: 'center',
-        padding: 20,
+        padding: 10,
     },
 
     itemText: {
@@ -70,7 +74,7 @@ const styles= StyleSheet.create({
         padding: 10,
         alignSelf: 'center',
         borderWidth: 10,
-        borderColor: 'black'
+        borderColor: 'black',
     },
 
     iconBorder: (color) => ({
