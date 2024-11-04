@@ -4,14 +4,11 @@ import { View, Text, StyleSheet} from 'react-native';
 
 const equip = ({item, resetItem, setSword, setHelmet, setChestpiece, setGloves}) => {
 
-    const [updateItem, setUpdateItem] = useState();
-
     const equipItem = () => {
         console.log(item.Type)
         switch(item.Type) {
             case 'Sword':
-                setUpdateItem(item)
-                setSword(updateItem)
+                setSword(item)
                 resetItem((prevItem) => ({...prevItem, Type: '?', Rarity: '?', Stat: "?", StatValue: '?'}));
                 break;
             case 'Helmet':

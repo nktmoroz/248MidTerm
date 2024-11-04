@@ -3,6 +3,8 @@ import { View, Text, StyleSheet} from 'react-native';
 
 const EquipDisplay = ({sword, helmet, chestpiece, gloves}) => {
 
+    
+
     return (
         <View style={styles.container}>
             <hr style={{height: 1, color: 'black', width: '100%'}}/>
@@ -18,13 +20,13 @@ const EquipDisplay = ({sword, helmet, chestpiece, gloves}) => {
                     <View style={styles.iconBorder('orange')}>
                         <img src='./icons/helmet.png' style={styles.equipmentIcon}/>
                     </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20,}}>Defense: {helmet.StatValue}</Text>
+                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {helmet.StatValue}</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
-                    <View style={styles.iconBorder('blue')}>
+                    <View style={styles.iconBorder('orange')}>
                         <img src='./icons/chest.png' style={styles.equipmentIcon}/>
                     </View>
-                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {0}</Text>
+                    <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {chestpiece.StatValue}</Text>
                 </View>
                 <View style={{alignItems: 'center'}}>
                     <View style={styles.iconBorder('orange')}>

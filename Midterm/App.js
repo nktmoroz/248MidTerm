@@ -19,7 +19,7 @@ export default function App() {
     <View style={styles.container}>
       <ItemDisplay item={GeneratedItem}/>
       <ItemGenerator setGeneratedItem={setGeneratedItem}/>
-      <EquipDisplay sword={EquippedSword} helmet={EquippedHelmet} chespiece={EquippedChestpiece} gloves={EquippedGloves}/>
+      <EquipDisplay sword={EquippedSword} helmet={EquippedHelmet} chestpiece={EquippedChestpiece} gloves={EquippedGloves}/>
       <Equip item={GeneratedItem} resetItem={setGeneratedItem} setSword={setEquippedSword} setHelmet={setEquippedHelmet} setChestpiece={setEquippedChestpiece} setGloves={setEquippedGloves}/>
       <ItemSalvage rarity={GeneratedItem.Rarity} resetItem={setGeneratedItem}/>
     </View>
