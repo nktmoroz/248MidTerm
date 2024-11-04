@@ -16,7 +16,7 @@ const Chestpiece = ({chest}) => {
     return(
         <View style={{alignItems: 'center'}}>
             <View style={styles.iconBorder(iconColor)}>
-                <img src='./icons/helmet.png' style={styles.equipmentIcon}/>
+                <img src='./icons/chest.png' style={styles.equipmentIcon}/>
             </View>
             <Text style={{fontWeight:'bold', fontSize: 20}}>Defense: {chest.StatValue}</Text>
         </View>

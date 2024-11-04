@@ -27,7 +27,7 @@ const ItemGenerator = ({setGeneratedItem}) => {
         rarityRoll = Math.floor((Math.random()) * 3);
         rarity = '';
 
-        switch(Math.floor(rarityRoll)){
+        switch(rarityRoll){
             case 0:
                 rarity = 'Common'
                 break;
