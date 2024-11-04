@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const ItemGenerator = ({setGeneratedItem}) => {
 
-    const [item, setItem] = useState({Type: 'Sword', Rarity: 'Common', Stat: 'Attack', StatValue: 1});
-
     const generateItem = () => {
 
         typeRoll = Math.floor((Math.random()) * 4);
@@ -47,8 +45,7 @@ const ItemGenerator = ({setGeneratedItem}) => {
 
         statValue = Math.floor(Math.random() * (Math.pow(5,rarityRoll + 1) - Math.pow(5,rarityRoll)) + Math.pow(5,rarityRoll));
         
-        setItem((prevItem) => ({...prevItem, Type: type, Rarity: rarity, Stat: stat, StatValue: statValue}));
-        setGeneratedItem(item);
+        setGeneratedItem(((prevItem) => ({...prevItem, Type: type, Rarity: rarity, Stat: stat, StatValue: statValue})));
     };
 
     return(
