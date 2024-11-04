@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 
 const ItemDisplay = ({item}) => {
-    let isShown = 'false';
     let iconColor;
     switch(item.Rarity){
         case 'Common':

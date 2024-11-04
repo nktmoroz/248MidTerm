@@ -22,10 +22,11 @@ const salvageItem = () => {
 
     return(
         <View style={styles.container}>
-            <TouchableOpacity style={styles.button} onPress={salvageItem}> 
-                <Text style= {styles.buttonText}> Salvage Item </Text>
-            </TouchableOpacity>
+            <hr style={{height: 1, color: 'black', width: '100%'}}/>
             <View style={styles.container}><Text style={styles.partsText}>Treasure Parts: {treasureParts}</Text></View>
+            <TouchableOpacity style={styles.button} onPress={salvageItem}> 
+                <Text style= {styles.buttonText}> Salvage </Text>
+            </TouchableOpacity>
         </View>
     );
 
@@ -50,7 +51,7 @@ const styles= StyleSheet.create({
         borderColor: 'black',
         borderRadius: 10,
         padding: 10,
-        marginBottom: 10,
+        margin: 10,
         backgroundColor: 'black',
     },
 
